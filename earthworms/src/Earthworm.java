@@ -3,8 +3,11 @@ import java.util.Objects;
 public class Earthworm {
     private int life ;
     private int pointAttack ;
+    private int id;
 
-    public Earthworm(int life, int pointAttack) {
+
+    public Earthworm(int id, int life, int pointAttack) {
+        this.id = id;
         this.life = life;
         this.pointAttack = pointAttack;
     }
@@ -18,6 +21,7 @@ public class Earthworm {
         return "Earthworm{" +
                 "life=" + life +
                 ", pointAttack=" + pointAttack +
+                ", id=" + id +
                 '}';
     }
 
@@ -44,5 +48,10 @@ public class Earthworm {
 
     public void setPointAttack(int pointAttack) {
         this.pointAttack = pointAttack;
+    }
+
+    public void attack (){
+        this.pointAttack = this.pointAttack - 15 ;
+        System.out.println(" vous venez d'attaquer l'adversaire vous perdez 10 point d'attaque");
     }
 }
