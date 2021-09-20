@@ -12,6 +12,14 @@ public class Earthworm {
         this.pointAttack = pointAttack;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getLife() {
         return life;
     }
