@@ -1,10 +1,13 @@
 import java.util.Objects;
+import java.util.Random;
+
 
 public class Earthworm {
-    private int life ;
-    private int pointAttack ;
+    private int life;
+    private int pointAttack;
     private int id;
 
+    private int attackRand ;
 
     public Earthworm(int id, int life, int pointAttack) {
         this.id = id;
@@ -58,8 +61,18 @@ public class Earthworm {
         this.pointAttack = pointAttack;
     }
 
-    public void attack (){
-        this.pointAttack = this.pointAttack - 15 ;
-        System.out.println(" vous venez d'attaquer l'adversaire vous perdez 10 point d'attaque");
+    public void attack(Earthworm worm, int attackRand ) {
+        worm.setLife(worm.getLife() - attackRand);
+        System.out.println("votre adversaire le " + worm.toString() + "perd " + attackRand + "pdv");
+        if (worm.getLife() < 1 ){
+            this.pointAttack = this.pointAttack - 5;
+            worm.setLife(0);
+            System.out.println("le ver " + this.getId() + " a gagner le combat face au ver " + worm.getId() );
+        } else {
+            this.pointAttack = this.pointAttack - 5;
+            System.out.println(" vous venez d'attaquer l'adversaire vous perdez 5 point d'attaque");
+            System.out.println();
+        }
+
     }
 }
