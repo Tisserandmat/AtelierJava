@@ -61,14 +61,17 @@ public class Earthworm {
         this.pointAttack = pointAttack;
     }
 
-    public void attack(Earthworm worm, int attackRand ) {
+    public void attack(Earthworm worm, int attackRand, int i ) {
         worm.setLife(worm.getLife() - attackRand);
-        System.out.println("votre adversaire le " + worm.toString() + "perd " + attackRand + "pdv");
+
         if (worm.getLife() < 1 ){
             this.pointAttack = this.pointAttack - 5;
             worm.setLife(0);
             System.out.println("le ver " + this.getId() + " a gagner le combat face au ver " + worm.getId() );
+            System.out.println(this.toString());
+            i = i - 1;
         } else {
+            System.out.println("votre adversaire le vers " + worm.getId() + " perd " + attackRand + "pdv  " + "il lui reste " + worm.getLife() + " pdv");
             this.pointAttack = this.pointAttack - 5;
             System.out.println(" vous venez d'attaquer l'adversaire vous perdez 5 point d'attaque");
             System.out.println();
