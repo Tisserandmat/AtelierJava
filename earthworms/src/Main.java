@@ -14,9 +14,9 @@ public class Main {
             int randDelete2 = randomDeleteLife1.nextInt(30);
 
 
-            worm1.attack(worm2, randDelete, 0);
+            worm1.attack(worm2, randDelete);
             if (worm2.getLife() > 0) {
-                worm2.attack(worm1, randDelete2, 0);
+                worm2.attack(worm1, randDelete2);
             }
         }
     }

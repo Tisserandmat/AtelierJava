@@ -42,21 +42,28 @@ public class Tournament {
                 for (int j = 0; j < team2.length; j++)
                     while (team1[i].getLife() > 0 && team2[j].getLife() > 0) {
 
-                        team1[i].attack(team2[j], damagewt1, i);
+                        team1[i].attackToWorm(team2[j], damagewt1, i, counterTeam1);
                         if (team2[j].getLife() > 0) {
-                            team2[j].attack(team1[i], damagewt2, j);
+                            team2[j].attackToWorm(team1[i], damagewt2, j, counterTeam2);
                         }
 
                     }
-            }
 
-        }
+            }
+//        }
+//        if (counterTeam1 > counterTeam2){
+//            System.out.println(counterTeam1 + counterTeam1);
+//        }else {
+//            System.out.println(counterTeam2 + counterTeam2);
+//        }
 
 
     }
 
 
 }
+
+
 
 
 
